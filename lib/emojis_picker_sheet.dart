@@ -16,11 +16,8 @@ class _EmojisPickerSheetState extends State<EmojisPickerSheet> {
 
   ///TODO: Next Step Create Functionality for selection and search bar
   _onEmojiSelected(Emoji emoji) {
-    _controller
-      ..text += emoji.emoji
-      ..selection = TextSelection.fromPosition(
-        TextPosition(offset: _controller.text.length),
-      );
+    Navigator.pop(context, emoji.emoji);
+    print(emoji.emoji);
   }
 
   _onBackspacePressed() {
